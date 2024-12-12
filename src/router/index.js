@@ -3,6 +3,7 @@ import {createRouter,createWebHistory} from 'vue-router';
 import LandingPage from '../pages/landing_page/index.vue';
 import MonitoringData from '../pages/monitoring/data/index.vue';
 import MonitoringCharts from '../pages/monitoring/charts/index.vue';
+import MonitoringHistory from '../pages/monitoring/history/index.vue';
 
 const routes = [
     {
@@ -33,9 +34,17 @@ const routes = [
             title: "MonitoringCharts",
             requiresAuth: true,
         },
-
-
     },
+
+    {
+        path:'/history',
+        name:"history",
+        component: () => import('../pages/monitoring/history/index.vue'),
+        meta:{
+            title: "MonitoringHistory",
+            requiresAuth: true,
+        },
+    }
 ];
 
 const router = createRouter({

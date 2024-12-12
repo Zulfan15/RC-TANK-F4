@@ -1,170 +1,115 @@
-<template>  
-  <div class="relative bg-[#1A1A1A] flex flex-col min-h-screen">  
-    <div class="flex flex-col sm:flex-row justify-between bg-[#91091E] w-full h-20 items-center px-4 overflow-hidden">  
-      <a href="/" class="sm:text-sm md:text-lg lg:text-2xl text-[#C39E5C] font-bold">RC TANK F-4</a>  
-  
-      <div data-aos="zoom-in" data-aos-duration="2000" class="flex items-center gap-4 mt-2 sm:mt-0 bg-[#C39E5C] rounded-full p-2 overflow-hidden">  
-        <a href="/data" class="text-[#91091E] sm:text-base md:text-lg lg:text-xl font-medium">Data Monitoring</a>  
-        <a href="/charts" class="text-[#91091E] sm:text-base md:text-lg lg:text-xl font-medium">Charts</a>  
-        <div class="p-2">  
-          <a class="text-[#91091E] sm:text-base md:text-lg lg:text-xl font-medium" href="/">Back</a>  
-        </div>  
-      </div>  
-    </div>  
-  
-    <div class="text-center mt-8">  
-      <h1 class="text-[#C39E5C] font-bold text-4xl">Sensor Data</h1>  
-    </div>  
-  
-    <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col items-center flex-grow mt-4">  
-      <div class="sensor-card mb-2">  
-        <h2 class="sensor-title">MQ135</h2>  
-        <p class="sensor-value">Value: {{ mq135Value }}</p>  
-      </div>  
-  
-      <div class="sensor-card mb-2">  
-        <h2 class="sensor-title">DHT22</h2>  
-        <p class="sensor-value">Temperature: {{ dht22Temperature }}°C</p>  
-        <p class="sensor-value">Humidity: {{ dht22Humidity }}%</p>  
-      </div>  
+<template>
+  <div class="relative bg-white flex min-h-screen flex-col">
+    <!-- Header (Navbar) -->
+    <div class="flex-grow flex flex-col">
+      <div class="bg-white shadow-sm w-full h-20 flex items-center gap-4 px-4 sm:px-6 md:px-8 lg:px-10 shadow-lg">
+        <div class="bg-red-500 rounded-full w-12 h-12"></div>
+        <div class="bg-yellow-500 rounded-full w-12 h-12"></div>
+        <div class="bg-green-500 rounded-full w-12 h-12"></div>
+      </div>
 
-      <!-- Riwayat Data -->
-      <div class="history-container mt-4 w-11/12 max-w-4xl">  
-        <h2 class="text-[#C39E5C] text-center font-bold text-4xl mb-4">History</h2>  
-        <table class="history-table w-full text-center border-collapse">  
-          <thead>  
-            <tr class="bg-[#C39E5C] text-[#91091E]">  
-              <th class="p-2">Timestamp</th>  
-              <th class="p-2">MQ135 Value</th>  
-              <th class="p-2">Temperature (°C)</th>  
-              <th class="p-2">Humidity (%)</th>  
-            </tr>  
-          </thead>  
-          <tbody>  
-            <tr v-for="(entry, index) in sensorHistory" :key="index" class="bg-[#F3E4C9] text-[#91091E]">  
-              <td class="p-2">{{ entry.timestamp }}</td>  
-              <td class="p-2">{{ entry.mq135 }}</td>  
-              <td class="p-2">{{ entry.temperature }}</td>  
-              <td class="p-2">{{ entry.humidity }}</td>  
-            </tr>  
-          </tbody>  
-        </table>  
-      </div>  
-    </div>  
-  
-    <footer class="bg-[#91091E] w-full h-20 flex items-center justify-center">  
-      <p class="text-[#C39E5C] text-sm sm:text-base">© 2025 RC TANK F-4. All rights reserved.</p>  
-    </footer>  
-  </div>  
-</template>  
-  
-<script setup>  
-import { ref, onMounted } from 'vue';  
-  
-const mq135Value = ref(0);  
-const dht22Temperature = ref(0);  
-const dht22Humidity = ref(0);  
-const sensorHistory = ref([]);  
+      <div class="flex flex-grow">
+        <!-- Sidebar -->
+        <aside class="w-24 bg-white/30 backdrop-blur-md border-r border-white/20 flex flex-col items-center py-24 space-y-6 shadow-lg">
+          <!-- Logo -->
+          <div class="mb-4 transition-transform hover:scale-110 duration-300">
+            <div class="w-16 h-16 bg-[#91091E] rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+              <a href="/">
+                <img src="@/assets/tank.png" alt="Logo" />
+              </a>
+            </div>
+          </div>
 
-const fetchSensorData = async () => {  
-  try {  
-    const response = await fetch('https://your-vercel-api-endpoint.com/sensor-data');  
-    const data = await response.json();  
+                    <!-- Navigation -->
+                    <nav class="space-y-6">
+            <a href="/data" class="w-fit h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
+              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/angkadata.png" alt="Data Monitoring" />
+            </a>
+            <a href="/charts" class="w-fit h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
+              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/charts.png" alt="Charts" />
+            </a>
+            <a href="/history" class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
+              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/history.png" alt="History" />
+            </a>
+          </nav>
+        </aside>
 
-    mq135Value.value = data.mq135;  
-dht22Temperature.value = data.dht22.temperature;  
-    dht22Humidity.value = data.dht22.humidity;  
+        <!-- Main Content -->
+        <div class="flex-grow flex flex-col p-4">
+          <div class="text-center mt-8">
+            <h1 class="text-[#91091E] font-bold text-4xl">Sensor Data</h1>
+          </div>
 
-    // Tambahkan data baru ke riwayat dengan timestamp  
-    sensorHistory.value.unshift({  
-      timestamp: new Date().toLocaleString(),  
-      mq135: data.mq135,  
-      temperature: data.dht22.temperature,  
-      humidity: data.dht22.humidity,  
-    });  
+          <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col items-center flex-grow mt-4">
+            <!-- Piezo Sensor Data -->
+            <div class="sensor-card mb-2">
+              <h2 class="sensor-title">Piezo Sensor</h2>
+              <p class="sensor-value">Value: {{ piezoValue }}</p>
+            </div>
 
-    // Batasi riwayat hanya menampilkan 20 entri terakhir  
-    if (sensorHistory.value.length > 20) {  
-      sensorHistory.value.pop();  
-    }  
-  } catch (error) {  
-    console.error('Error fetching sensor data:', error);  
-  }  
-};  
-  
-onMounted(() => {  
-  fetchSensorData();  
+            <!-- DHT22 Sensor Data -->
+            <div class="sensor-card mb-2">
+              <h2 class="sensor-title">DHT22</h2>
+              <p class="sensor-value">Temperature: {{ dht22Temperature }}°C</p>
+              <p class="sensor-value">Humidity: {{ dht22Humidity }}%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
-  // Fetch data periodically every 5 seconds  
-  setInterval(fetchSensorData, 5000);  
-});  
-</script>  
-  
-<style scoped>  
-.relative {  
-  display: flex;  
-  flex-direction: column;  
-  min-height: 100vh;  
-}  
+<script setup>
+import { ref, onMounted } from 'vue';
 
-.sensor-card {  
-  background-color: #C39E5C;  
-  border-radius: 1.5rem;  
-  padding: 1.5rem;  
-  width: 90%;  
-  max-width: 600px;  
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
-  text-align: center;  
-}  
+const piezoValue = ref(0);
+const dht22Temperature = ref(0);
+const dht22Humidity = ref(0);
 
-.sensor-title {  
-  color: #91091E;  
-  font-weight: bold;  
-  font-size: 1.5rem;  
-  margin-bottom: 0.25rem;  
-}  
+const fetchSensorData = async () => {
+  try {
+    const response = await fetch('https://your-vercel-api-endpoint.com/sensor-data');
+    const data = await response.json();
 
-.sensor-value {  
-  color: #91091E;  
-  font-weight: bold;  
-  font-size: 1rem;  
-  margin: 0.1rem 0;  
-}  
+    piezoValue.value = data.piezo;
+    dht22Temperature.value = data.dht22.temperature;
+    dht22Humidity.value = data.dht22.humidity;
+  } catch (error) {
+    console.error('Error fetching sensor data:', error);
+  }
+};
 
-.history-container {  
-  width: 100%;  
-  max-width: 600px;  
-}  
+onMounted(() => {
+  fetchSensorData();
 
-.history-table {  
-  width: 100%;  
-  border-collapse: collapse;  
-}  
+  // Fetch data periodically every 5 seconds
+  setInterval(fetchSensorData, 5000);
+});
+</script>
 
-.history-table th {  
-  border: 1px solid #91091E;  
-  padding: 0.5rem;  
-  text-align: left;  
-}  
+<style scoped>
+.sensor-card {
+  background-color: #C39E5C;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
-.history-table td {  
-  border-top: 1px solid #91091E;  
-  border-bottom: 1px solid #91091E;  
-  padding: 0.5rem;  
-  text-align: left;  
-}  
+.sensor-title {
+  color: #91091E;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
 
-.footer {  
-  background-color: #91091E;  
-  height: 5rem;  
-  display: flex;  
-  justify-content: center;  
-  align-items: center;  
-}  
-
-.footer-text {  
-  color: #C39E5C;  
-  font-weight: bold;  
-  font-size: 1.25rem;  
-}  
+.sensor-value {
+  color: #91091E;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0.1rem 0;
+}
 </style>
