@@ -39,7 +39,7 @@ const routes = [
     {
         path:'/history',
         name:"history",
-        component: () => import('../pages/monitoring/history/index.vue'),
+        component: MonitoringHistory,
         meta:{
             title: "MonitoringHistory",
             requiresAuth: true,
