@@ -42,9 +42,9 @@
               <h1 class="text-[#91091E] font-bold text-4xl">History</h1>
             </div>
   
-            <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col items-center flex-grow mt-4">
+            <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col  items-center flex-grow mt-4">
               <!-- History Data Table -->
-              <div class="history-container mt-4 w-full max-w-4xl overflow-x-auto">
+              <div class="history-container mt-4 w-full max-w-7xl overflow-y-auto overflow-x-auto">
                 <table class="history-table w-full text-center border-collapse">
                   <thead>
                     <tr class="bg-[#C39E5C] text-[#91091E]">
@@ -94,7 +94,7 @@
   <style scoped>
   .history-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
   }
   
   .history-table {
@@ -105,7 +105,7 @@
   .history-table th {
     border: 1px solid #91091E;
     padding: 0.5rem;
-    text-align: left;
+    text-align: center;
   }
   
   .history-table td {
