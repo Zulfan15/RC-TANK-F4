@@ -58,7 +58,7 @@
 
     <!-- Member Section -->
     <div class="ml-24 mr-6"> 
-      <h1 class="text-[#91091E] font-bold text-xl md:text-3xl text-center">Member</h1>
+      <h1 class="text-[#91091E] font-bold text-xl md:text-3xl text-center">Members</h1>
     </div>
 
     <!-- Cards Section -->
