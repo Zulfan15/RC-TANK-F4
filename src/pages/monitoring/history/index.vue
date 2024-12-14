@@ -1,48 +1,50 @@
 <template>
     <div class="relative bg-white flex min-h-screen flex-col">
-      <!-- Header (Navbar) -->
-      <div class="flex-grow flex flex-col">
-        <div class="bg-white shadow-sm w-full h-20 flex items-center gap-4 px-4 sm:px-6 md:px-8 lg:px-10 shadow-lg">
-          <div class="bg-red-500 rounded-full w-12 h-12"></div>
-          <div class="bg-yellow-500 rounded-full w-12 h-12"></div>
-          <div class="bg-green-500 rounded-full w-12 h-12"></div>
+    <!-- Navbar -->
+    <div class="bg-white shadow-sm w-full h-12 sm:h-12 md:h-12 lg:h-12 fixed top-0 z-50 flex items-center gap-4 px-4 sm:px-6 md:px-8 lg:px-10 shadow-lg">
+      <div class="bg-red-500 rounded-full w-10 h-10 sm:w-12 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10"></div>
+      <div class="bg-yellow-500 rounded-full w-10 h-10 sm:w-12 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10"></div>
+      <div class="bg-green-500 rounded-full w-10 h-10 sm:w-12 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10"></div>
+    </div>
+
+    <div class="flex flex-grow flex-col md:flex-row mt-20">
+      <!-- Sidebar -->
+      <aside class="w-14 sm:w-14 md:w-14 lg:w-14 h-screen fixed top-10 left-0 px-4 bg-white/30 backdrop-blur-md border-r border-white/20 flex flex-col items-center py-2 space-y-6 shadow-lg flex-shrink-0">
+        <!-- Logo -->
+        <div class="mb-2 mt-4 transition-transform hover:scale-110 duration-300">
+          <div class="w-12 sm:w-12 md:w-12 lg:w-12 sm:h-12 md:h-12 lg:h-12 bg-[#91091E] rounded-xl flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
+            <a href="/">
+              <img class="w-fit h-fit p-2 group-hover:scale-110 transition-transform duration-300"
+              src="@/assets/tank.png" alt="Logo" />
+            </a>
+          </div>
         </div>
-  
-        <div class="flex flex-grow">
-        <!-- Sidebar -->
-        <aside class="w-24 bg-white/30 backdrop-blur-md border-r border-white/20 flex flex-col items-center py-24 space-y-6 shadow-lg">
-          <!-- Logo -->
-          <div class="mb-4 transition-transform hover:scale-110 duration-300">
-            <div class="w-16 h-16 bg-[#91091E] rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
-              <a href="/">
-                <img src="@/assets/tank.png" alt="Logo" />
-              </a>
-            </div>
+        <!-- Navigation -->
+        <nav class="flex flex-col gap-6">
+          <div class="w-12 sm:w-12 md:w-12 lg:w-12 sm:h-12 md:h-12 lg:h-12">
+            <a href="/data" class="flex items-center justify-center rounded-xl bg-[#91091E] shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+            <img class="w-12 h-12 md:w-14 md:h-12 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/angkadata.png" alt="Data" />
+          </a>
           </div>
 
-                      <!-- Navigation -->
-          <nav class="space-y-6">
-            <a href="/data" class="w-fit h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
-              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/angkadata.png" alt="Data Monitoring" />
-            </a>
-            <a href="/charts" class="w-fit h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
-              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/charts.png" alt="Charts" />
-            </a>
-            <a href="/history" class="w-14 h-14 flex items-center justify-center rounded-xl bg-[#91091E] hover:bg-teal-400 hover:text-white transition-all duration-300 group shadow-md">
-              <img class="w-14 h-14 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/history.png" alt="History" />
-            </a>
-          </nav>
-          </aside>
+          <a href="/charts" class="flex items-center justify-center rounded-xl bg-[#91091E] shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+            <img class="w-12 h-12 md:w-12 md:h-12 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/charts.png" alt="Charts" />
+          </a>
+          <a href="/history" class="flex items-center justify-center rounded-xl bg-[#91091E] shadow-none transition-shadow duration-300 cursor-pointer hover:shadow-lg hover:shadow-gray-400">
+            <img class="w-12 h-12 sm:w-12 sm:h-12 md:w-12 md:h-12 p-2 group-hover:scale-110 transition-transform duration-300" src="@/assets/history.png" alt="History" />
+          </a>
+        </nav>
+      </aside>
   
           <!-- Main Content -->
-          <div class="flex-grow flex flex-col p-4">
+          <div class="flex-grow flex flex-col p-4 ml-14">
             <div class="text-center mt-8">
               <h1 class="text-[#91091E] font-bold text-4xl">History</h1>
             </div>
   
             <div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col items-center flex-grow mt-4">
               <!-- History Data Table -->
-              <div class="history-container mt-4 w-11/12 max-w-4xl">
+              <div class="history-container mt-4 w-full max-w-4xl overflow-x-auto">
                 <table class="history-table w-full text-center border-collapse">
                   <thead>
                     <tr class="bg-[#C39E5C] text-[#91091E]">
@@ -66,7 +68,6 @@
           </div>
         </div>
       </div>
-    </div>
   </template>
   
   <script setup>
