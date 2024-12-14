@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-white flex min-h-screen flex-col">
+  <div class="relative bg-[#FCFAEE] flex min-h-screen flex-col">
     <!-- Navbar -->
     <div class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 shadow-sm w-full h-12 sm:h-12 md:h-12 lg:h-12 fixed top-0 z-50 flex items-center gap-4 px-4 sm:px-6 md:px-8 lg:px-10 shadow-lg">
       <div class="bg-red-500 rounded-full w-10 h-10 sm:w-12 sm:h-10 md:w-10 md:h-10 lg:w-10 lg:h-10"></div>
