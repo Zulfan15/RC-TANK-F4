@@ -44,7 +44,7 @@
 
           <div class="grid-container mt-4">
             <!-- DHT22 Temperature Chart -->
-            <div data-aos="fade-left" data-aos-duration="2000" class="sensor-card">
+            <div data-aos="fade-right" data-aos-duration="2000" class="sensor-card">
               <h2 class="sensor-title">DHT22 Temperature Data</h2>
               <div class="chart-container">
                 <canvas id="dht22TempChart"></canvas>
@@ -52,7 +52,7 @@
             </div>
 
             <!-- DHT22 Humidity Chart -->
-            <div data-aos="fade-right" data-aos-duration="2000" class="sensor-card">
+            <div data-aos="fade-up" data-aos-duration="2000" class="sensor-card">
               <h2 class="sensor-title">DHT22 Humidity Data</h2>
               <div class="chart-container">
                 <canvas id="dht22HumChart"></canvas>

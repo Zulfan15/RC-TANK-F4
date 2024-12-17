@@ -64,7 +64,7 @@
     <!-- Cards Section -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-8 px-4 md:px-8 lg:px-12 ml-24 mr-6"> <!-- Added ml-24 here to make sure the cards don't overlap the sidebar -->
       <!-- Card 1 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+      <div data-aos="fade-down-right" data-aos-duration="1000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
         <div class="w-full h-96 bg-lime-400 text-gray-800">
           <img class="w-full h-full object-cover" src="@/assets/davin.png" alt="Anggota 1" />
         </div>
@@ -76,7 +76,7 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+      <div data-aos="fade-down" data-aos-duration="2000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
         <div class="w-full h-96 bg-lime-400 text-gray-800">
           <img class="w-full h-full object-cover" src="@/assets/agung.png" alt="Anggota 2" />
         </div>
@@ -88,7 +88,7 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+      <div data-aos="fade-down-left" data-aos-duration="3000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
         <div class="w-full h-96 bg-lime-400 text-gray-800">
           <img class="w-full h-full object-cover" src="@/assets/rakha.png" alt="Anggota 3" />
         </div>
@@ -100,8 +100,8 @@
       </div>
 
       <!-- Card 4 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
-        <div class="w-full h-96 bg-lime-400 text-gray-800">
+      <div data-aos="fade-up-right" data-aos-duration="3000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+        <div class="w-full h-96 bg-[#91091E] text-gray-800">
           <img class="w-full h-full object-cover" src="" alt="Anggota 4" />
         </div>
         <div class="absolute bg-gray-50 -bottom-20 w-full p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
@@ -112,8 +112,8 @@
       </div>
 
       <!-- Card 5 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
-        <div class="w-full h-96 bg-lime-400 text-gray-800">
+      <div data-aos="fade-up" data-aos-duration="2000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+        <div class="w-full h-96 bg-[#91091E] text-gray-800">
           <img class="w-full h-full object-cover" src="" alt="Anggota 5" />
         </div>
         <div class="absolute bg-gray-50 -bottom-20 w-full p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">
@@ -124,8 +124,8 @@
       </div>
 
       <!-- Card 6 -->
-      <div class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
-        <div class="w-full h-96 bg-lime-400 text-gray-800">
+      <div data-aos="fade-up-left" data-aos-duration="1000" class="relative group duration-500 cursor-pointer mb-6 overflow-hidden text-gray-50 max-w-full rounded-2xl hover:duration-700">
+        <div class="w-full h-96 bg-[#91091E] text-gray-800">
           <img class="w-full h-full object-cover" src="" alt="Anggota 6" />
         </div>
         <div class="absolute bg-gray-50 -bottom-20 w-full p-3 flex flex-col gap-1 group-hover:-bottom-0 group-hover:duration-600 duration-500">

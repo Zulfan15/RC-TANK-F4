@@ -46,7 +46,7 @@
             <p class="text-[#91091E] font-bold">Loading sensor data...</p>
           </div>
 
-          <div v-else class="flex flex-col gap-4 items-center flex-grow mt-4 w-full">
+          <div v-else class="flex flex-col gap-4 items-center flex-grow mt-4 w-full ">
             <!-- Piezo Sensor Data -->
             <div class="sensor-card mb-2">
               <h2 class="sensor-title">Piezo Sensor</h2>
